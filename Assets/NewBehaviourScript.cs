@@ -1,30 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    [SerializeField] public int m_speed;
+    [SerializeField] float m_speed;
     
     // Start is called before the first frame update
     void Start()
     {
-        transform.position += Vector3.forward * m_speed;
-        transform.position += Vector3.back * m_speed;
-        transform.position += Vector3.right * m_speed;
-        transform.position += Vector3.left * m_speed;
+        transform.position += Vector3.forward * m_speed * Time.deltaTime;
+        transform.position += Vector3.back * m_speed * Time.deltaTime;
+        transform.position += Vector3.right * m_speed * Time.deltaTime;
+        transform.position += Vector3.left * m_speed * Time.deltaTime;
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void FixedUpdate()
     {
-        if (Input.GetKeyUp(KeyCode.W))
-            transform.position += Vector3.forward * m_speed * Time.deltaTime; ;
-        if (Input.GetKeyUp(KeyCode.S))
-            transform.position += Vector3.back;
-        if (Input.GetKeyUp(KeyCode.D))
-            transform.position += Vector3.right;
-        if (Input.GetKeyUp(KeyCode.A))
-            transform.position += Vector3.left;
+        if (Input.GetKey(KeyCode.W))
+            transform.position += Vector3.forward * m_speed * Time.deltaTime;
+        if (Input.GetKey(KeyCode.S))
+            transform.position += Vector3.back * m_speed * Time.deltaTime;
+        if (Input.GetKey(KeyCode.D))
+            transform.position += Vector3.right * m_speed * Time.deltaTime;
+        if (Input.GetKey(KeyCode.A))
+            transform.position += Vector3.left * m_speed * Time.deltaTime;
     }
 }
