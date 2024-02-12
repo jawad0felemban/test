@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 public class NewBehaviourScript : MonoBehaviour
 {
@@ -10,11 +12,9 @@ public class NewBehaviourScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position += Vector3.forward * m_speed * Time.deltaTime;
-        transform.position += Vector3.back * m_speed * Time.deltaTime;
-        transform.position += Vector3.right * m_speed * Time.deltaTime;
-        transform.position += Vector3.left * m_speed * Time.deltaTime;
+
     }
+
 
     // Update is called once per frame
     void FixedUpdate()
@@ -27,5 +27,12 @@ public class NewBehaviourScript : MonoBehaviour
             transform.position += Vector3.right * m_speed * Time.deltaTime;
         if (Input.GetKey(KeyCode.A))
             transform.position += Vector3.left * m_speed * Time.deltaTime;
+        if (Input.GetKey(KeyCode.Space))
+            transform.position += Vector3.up * m_speed * Time.deltaTime;
+        if (Input.GetKey(KeyCode.C))
+            transform.position += Vector3.down * m_speed * Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.E))
+            transform.position = Vector3.zero * m_speed * Time.deltaTime;
     }
 }
+
