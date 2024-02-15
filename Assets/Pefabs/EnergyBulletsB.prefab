@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: 8531791543369654542}
   - component: {fileID: 129635049782391745}
   - component: {fileID: -804102770976187413}
+  - component: {fileID: -8216617532827960998}
   m_Layer: 0
   m_Name: EnergyBulletsB
-  m_TagString: Untagged
+  m_TagString: PlayerWeapons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8641,8 +8642,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261c5c2ef57406940b0fd45585bcf59f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Speed: 40
-  m_Bulletslifetime: 3
+  m_Speed: 80
+  m_Bulletslifetime: 5
 --- !u!54 &129635049782391745
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8691,3 +8692,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-8216617532827960998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5598782578376775151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f43974ca55b27b344bd0491236a28359, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

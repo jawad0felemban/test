@@ -25,18 +25,18 @@ public class MoveControl : MonoBehaviour
     private void Update()
     {
         if (Input.GetKey(KeyCode.W))
-            m_Player.velocity += Vector3.forward * m_speed * Time.deltaTime;
+            m_Player.velocity = Vector3.forward * m_speed;
         if (Input.GetKey(KeyCode.S))
-            m_Player.velocity += Vector3.back;
+            m_Player.velocity = Vector3.back * m_speed;
         if (Input.GetKey(KeyCode.D))
-            m_Player.velocity += Vector3.right;
+            m_Player.velocity = Vector3.right * m_speed;
         if (Input.GetKey(KeyCode.A))
-            m_Player.velocity += Vector3.left;
+            m_Player.velocity = Vector3.left * m_speed;
         if (Input.GetKeyDown(KeyCode.C))
         {
             for (int i = 0; i < 11; i++)
             {
-                m_Player.velocity += Vector3.up;
+                m_Player.velocity = Vector3.up ;
             }
         }
 
