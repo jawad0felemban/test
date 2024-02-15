@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 550651967709137171}
   - component: {fileID: 7741533139553447103}
   - component: {fileID: 982557683387272495}
-  - component: {fileID: 3346593754515392105}
+  - component: {fileID: 7458583458486193262}
+  - component: {fileID: 2849218710803193786}
   m_Layer: 0
   m_Name: EnergyBulletsY
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 4266463747094165527}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.021, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8640,7 +8641,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261c5c2ef57406940b0fd45585bcf59f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!54 &3346593754515392105
+  m_Speed: 70
+  m_Bulletslifetime: 1
+--- !u!54 &7458583458486193262
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8667,3 +8670,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &2849218710803193786
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4266463747094165527}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

@@ -7,37 +7,82 @@ public class ShorterGun : MonoBehaviour
     [SerializeField] private GameObject m_bulletstY;
     [SerializeField] private GameObject m_bulletstR;
     [SerializeField] private GameObject m_bulletstB;
+    [SerializeField] private float m_FireRateOfShoting;
+    
 
     private Rigidbody m_bullets;
 
 
     private void Awake()
     {
-        //InvokeRepeating("KeepFire", 2.0f, 1.0f);
-        //InvokeRepeating("StopFire", 2.0f, 1.0f);
+
         m_bullets = GetComponent<Rigidbody>();
     }
-    // Start is called before the first frame update
+    
     void Start()
     {
 
     }
 
-    // Update is called once per frame
-    private void FixedUpdate()
+    
+    private void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(m_bulletstY, m_bullets.velocity, Quaternion.identity);
+            InvokeRepeating("ShootY", 0.5f,m_FireRateOfShoting);
         }
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
-            Instantiate(m_bulletstR, m_bullets.velocity, Quaternion.identity);
+            CancelInvoke();
         }
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            Instantiate(m_bulletstB, m_bullets.velocity, Quaternion.identity);
+            InvokeRepeating("ShootR", 0.5f, m_FireRateOfShoting);
         }
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            CancelInvoke();
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            InvokeRepeating("ShootB", 0.5f, m_FireRateOfShoting);
+        }
+        if (Input.GetKeyUp(KeyCode.Q))
+        {
+            CancelInvoke();
+        }
+        //if (Input.GetKey(KeyCode.Space))
+        //{
+        //     Instantiate(m_bulletstY, transform.position, Quaternion.identity);
+
+        //    //Instantiate(m_bulletstY, transform.position , Quaternion.identity);
+        //}
+        //if (Input.GetKey(KeyCode.E))
+        //{
+        //    Instantiate(m_bulletstR, transform.position, Quaternion.identity);
+
+        //    //Instantiate(m_bulletstR, transform.position , Quaternion.identity);
+        //}
+        //if (Input.GetKey(KeyCode.Q))
+        //{
+        //    Instantiate(m_bulletstB, transform.position, Quaternion.identity);
+
+        //    //Instantiate(m_bulletstB, transform.position , Quaternion.identity);
+        //}
+
+    }
+    private void ShootY()
+    {
+                    Instantiate(m_bulletstY, transform.position, Quaternion.identity);
+    }
+    private void ShootR()
+    {
+        Instantiate(m_bulletstR, transform.position, Quaternion.identity);
+    }
+    private void ShootB()
+    {
+        Instantiate(m_bulletstB, transform.position, Quaternion.identity);
     }
 
 }

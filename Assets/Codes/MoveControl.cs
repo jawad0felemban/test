@@ -14,14 +14,14 @@ public class MoveControl : MonoBehaviour
     {
         m_Player = GetComponent<Rigidbody>();
     }
-    // Start is called before the first frame update
+    
     void Start()
     {
 
     }
 
 
-    // Update is called once per frame
+    
     private void Update()
     {
         if (Input.GetKey(KeyCode.W))
@@ -34,7 +34,7 @@ public class MoveControl : MonoBehaviour
             m_Player.velocity += Vector3.left;
         if (Input.GetKeyDown(KeyCode.C))
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 11; i++)
             {
                 m_Player.velocity += Vector3.up;
             }

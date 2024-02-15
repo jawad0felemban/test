@@ -5,22 +5,24 @@ using UnityEngine.ProBuilder;
 
 public class BulletsControl : MonoBehaviour
 {
+    [SerializeField] private float m_Speed;
+    [SerializeField] private float m_Bulletslifetime;
     private Rigidbody m_BC;
     private void Awake()
     {
         m_BC = GetComponent<Rigidbody>();
     }
-    // Start is called before the first frame update
+    
     void Start()
     {
         
     }
-
-    // Update is called once per frame
+    //
     private void Update()
     {
-        m_BC.velocity += Vector3.forward;
-        Destroy(gameObject,1.0f);
+       // m_BC.velocity += Vector3.forward * m_Speed * Time.deltaTime;
+       transform.position += Vector3.forward * m_Speed * Time.deltaTime;
+        Destroy(gameObject, m_Bulletslifetime);
 
     }
 }
