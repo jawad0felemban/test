@@ -5,9 +5,10 @@ using UnityEngine.ProBuilder;
 
 public class BulletsControl : MonoBehaviour
 {
+    private Rigidbody m_BC;
     private void Awake()
     {
-        
+        m_BC = GetComponent<Rigidbody>();
     }
     // Start is called before the first frame update
     void Start()
@@ -16,9 +17,9 @@ public class BulletsControl : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        transform.position += Vector3.forward;
+        m_BC.velocity += Vector3.forward;
         Destroy(gameObject,1.0f);
 
     }
