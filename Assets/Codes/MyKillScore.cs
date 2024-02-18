@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 
 public class MyKillScore : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI m_Text;
     private int m_Score;
     
     public void AddScore(int Point)

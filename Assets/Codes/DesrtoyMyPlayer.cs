@@ -19,10 +19,10 @@ public class DesrtoyMyPlayer : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "EnemyWeapons")
+        if (collision.gameObject.tag == "Player")
         {
-            if (collision.gameObject.tag != "Player")
-                Debug.Log("You Get Hit By Enemy NoooooB!!!!!!!!!!");
+            if (collision.gameObject.tag != "EnemyWeapons")
+                Debug.Log("You Get Hit By Enemy NoooooB!!!!!!!!!!!!!!!!!!!!!");
         }
         if (collision.gameObject.tag == "Player")
         {

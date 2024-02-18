@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Speed: 30
-  m_Bulletslifetime: 3
+  m_Bulletslifetime: 2
 --- !u!54 &-6925402693285455907
 Rigidbody:
   m_ObjectHideFlags: 0
