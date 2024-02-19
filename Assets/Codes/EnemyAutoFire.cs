@@ -26,7 +26,8 @@ public class EnemyAutoFire : MonoBehaviour
 
     private void Update()
     {
-        InvokeRepeating("ShootB", 0.5f ,m_FireRateOfShoting);
+
+        InvokeRepeating("ShootB", 0.10f ,m_FireRateOfShoting);
         //for (int i = 0; i == 4; i++)
         //{
         //    if (i == 0)
