@@ -7,13 +7,15 @@ using Unity.VisualScripting;
 
 public class MyKillScore : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI m_Text;
-    private int m_Score;
+    [SerializeField] private TextMeshProUGUI m__Text;
+    private int m_MyCounter;    
     
-    public void AddScore(int Point)
-    {
+    public void IncreaseCounter() 
+    {  
+        ++m_MyCounter;
+        m__Text.text = m_MyCounter.ToString();
+    }
         
     }
     
 
-}

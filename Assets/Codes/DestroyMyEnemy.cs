@@ -25,15 +25,9 @@ public class DestroyMyEnemy : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "PlayerWeapons") 
-        {
-            if(collision.gameObject.tag != "Enemy")
-            Destroy(gameObject);
-        }
         if (collision.gameObject.tag == "Enemy")
         {
             if (collision.gameObject.tag != "PlayerWeapons")
-                
                 Destroy(gameObject);
         }
     }
