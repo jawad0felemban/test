@@ -9,12 +9,13 @@ public class EnemyAutoFire : MonoBehaviour
     [SerializeField] private GameObject m_bulletstCX;
     [SerializeField] private float m_FireRateOfShoting;
 
+    private Pausebutton m_PauseButton;
     private Rigidbody m_bulletsE;
 
 
     private void Awake()
     {
-
+        m_PauseButton = FindAnyObjectByType<Pausebutton>();
         m_bulletsE = GetComponent<Rigidbody>();
     }
 
@@ -26,8 +27,10 @@ public class EnemyAutoFire : MonoBehaviour
 
     private void Update()
     {
+        if (!m_PauseButton.IsPauased) 
+        { 
 
-        InvokeRepeating("ShootB", 0.10f ,m_FireRateOfShoting);
+        InvokeRepeating("ShootB", 0.10f, m_FireRateOfShoting);
         //for (int i = 0; i == 4; i++)
         //{
         //    if (i == 0)
@@ -45,6 +48,7 @@ public class EnemyAutoFire : MonoBehaviour
         //    else
         //        i = 0;
         //}
+        }
     }
 
     private void ShootB()

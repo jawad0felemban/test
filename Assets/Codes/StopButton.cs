@@ -7,18 +7,15 @@ using TMPro;
 
 public class Pausebutton : MonoBehaviour
 {
-    [SerializeField] GameObject pauseMenu = null;
-
-    bool isPaused;
-    public bool GetIsPaused() { return isPaused; }
-
-    void Update()
+    public bool IsPauased;
+    public void PuaseGame()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            isPaused = !isPaused;
-            Time.timeScale = isPaused ? 0 : 1;
-            pauseMenu.SetActive(isPaused);
-        }
+        IsPauased = true;
+        Time.timeScale = 0.0f;
+    }
+    public void Resume()
+    {
+        IsPauased = false;
+        Time.timeScale = 1.0f;
     }
 }

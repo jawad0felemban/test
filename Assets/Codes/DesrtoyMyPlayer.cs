@@ -21,13 +21,12 @@ public class DesrtoyMyPlayer : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (collision.gameObject.tag != "EnemyWeapons")
-                Debug.Log("You Get Hit By Enemy NoooooB!!!!!!!!!!!!!!!!!!!!!");
+            Destroy(gameObject);
         }
-        if (collision.gameObject.tag == "Player")
+
+        if (collision.gameObject.tag == "EnemyWeapons")
         {
-            if (collision.gameObject.tag != "EnemyWeapons")
-                Destroy(gameObject);
+            Debug.Log("You Get Hit By Enemy You NooooooooooooooooooB !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         }
     }
 }
