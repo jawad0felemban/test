@@ -10,4 +10,12 @@ public class MyButtontoChageLevel : MonoBehaviour
     {
         SceneManager.LoadScene("StartGame");
     }
+    public void GotoLevelOne()
+    {
+        SceneManager.LoadScene("LevelOne");
+    }
+    public void GotoLevelTwo()
+    {
+        SceneManager.LoadScene("LevelTwo");
+    }
 }
