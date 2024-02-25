@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
+using Color = System.Drawing.Color;
 
 public class MoveControl : MonoBehaviour
 {
     [SerializeField] float m_speed;
     private Rigidbody m_Player;
+    
 
     public void Awake()
     {
@@ -17,11 +20,12 @@ public class MoveControl : MonoBehaviour
     
     void Start()
     {
-
+        
+        
     }
 
+    //private float q = 0.0f;
 
-    
     private void Update()
     {
         if (Input.GetKey(KeyCode.W))
@@ -40,7 +44,10 @@ public class MoveControl : MonoBehaviour
             }
         }
 
+        //q += Time.deltaTime * 50;
+        //Debug.DrawLine(Vector3.zero, new Vector3(q, 2, 2), UnityEngine.Color.red);
 
+        //Debug.DrawLine(Vector3.zero, new Vector3(q, q, q), UnityEngine.Color.blue);
     }
 }
 
